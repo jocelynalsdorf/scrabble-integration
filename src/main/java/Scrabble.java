@@ -6,6 +6,7 @@ public class Scrabble {
     public static void main(String[] args){}
 
     public Integer getScore(String word) {
+        Integer x = 0;
         Map<Character, Integer> numberHash = new HashMap<Character, Integer>();
         numberHash.put('a', 1);
         numberHash.put('b', 3);
@@ -34,6 +35,13 @@ public class Scrabble {
         numberHash.put('y', 4);
         numberHash.put('z', 10);
         numberHash.put(' ', 0);
+
+        for (Integer i = 0; i < word.length(); i++) {
+         x = numberHash.get(word.charAt(i));
+        }
+
+    return x;
+
 
     }
 
