@@ -24,6 +24,9 @@ public class Scrabble {
             String word = request.queryParams("word");
             Integer getScore = getScore(word);
 
+            model.put("word", word);
+            model.put("getScore", getScore(word));
+
             return new ModelAndView(model, layout);
 
         }, new VelocityTemplateEngine());
