@@ -5,8 +5,10 @@ import java.util.Map;
 public class Scrabble {
     public static void main(String[] args){}
 
-    public Integer getScore(String word) {
-        Integer x = 0;
+    public Integer getScore(String userWord) {
+        // Integer x = 0;
+        String word = userWord.toLowerCase();
+        Integer total = 0;
         Map<Character, Integer> numberHash = new HashMap<Character, Integer>();
         numberHash.put('a', 1);
         numberHash.put('b', 3);
@@ -37,10 +39,10 @@ public class Scrabble {
         numberHash.put(' ', 0);
 
         for (Integer i = 0; i < word.length(); i++) {
-         x = numberHash.get(word.charAt(i));
+         total += numberHash.get(word.charAt(i));
         }
 
-    return x;
+        return total;
 
 
     }
